@@ -36,7 +36,7 @@ async function main() {
             id: 'p1',
             title: 'Forest Adventure: Bug Hunting',
             description: 'Join us for an exciting day in the forest looking for rare bugs!',
-            thumbnail: 'https://images.unsplash.com/photo-1596464716127-f9a8f4e24390?q=80&w=800',
+            thumbnail: 'https://images.unsplash.com/photo-1596464716127-f9a8f4e24390?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             date: new Date('2024-06-15T10:00:00Z'),
             location: 'Seoul Forest, Entrance 3',
             status: 'recruiting',
@@ -44,8 +44,8 @@ async function main() {
             currentParticipants: 4,
             price: 30000,
             images: JSON.stringify([
-                "https://images.unsplash.com/photo-1596464716127-f9a8f4e24390?q=80&w=800",
-                "https://images.unsplash.com/photo-1444212477490-ca407925329e?q=80&w=800"
+                "https://images.unsplash.com/photo-1596464716127-f9a8f4e24390?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1444212477490-ca407925329e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             ])
         }
     });
