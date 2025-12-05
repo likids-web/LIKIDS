@@ -70,7 +70,7 @@ export const api = {
         return reviews.map(r => ({
             ...r,
             createdAt: r.createdAt.toISOString(),
-            userName: r.user.name
+            userName: r.user.name || "Anonymous"
         }));
     },
 
