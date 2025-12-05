@@ -11,6 +11,7 @@ export default function Navbar() {
     return (
         <nav className={styles.navbar}>
             <Link href="/" className={styles.brand}>LiKids</Link>
+            <Link href="/programs" style={{ marginLeft: '1rem', fontWeight: 500 }}>Programs</Link>
 
             <div className={styles.menu}>
                 {user ? (

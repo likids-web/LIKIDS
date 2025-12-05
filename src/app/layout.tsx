@@ -22,11 +22,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <SessionProvider>
           <div className="mobile-layout-wrapper">
-            <Navbar />
-            <main className="main-content">
-              {children}
-            </main>
-            <Footer />
+            <div className="mobile-container">
+              <Navbar />
+              <main className="main-content">
+                {children}
+              </main>
+              <Footer />
+            </div>
           </div>
         </SessionProvider>
       </body>
