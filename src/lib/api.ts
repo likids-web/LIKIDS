@@ -87,7 +87,7 @@ export const api = {
         return {
             ...review,
             createdAt: review.createdAt.toISOString(),
-            userName: review.user.name
+            userName: review.user.name || "Anonymous"
         };
     },
 
@@ -106,7 +106,7 @@ export const api = {
             id: a.id,
             programId: a.programId,
             userId: a.userId,
-            userName: a.user.name,
+            userName: a.user.name || "Unknown User",
             status: a.status,
             appliedAt: a.appliedAt.toISOString()
         }));
