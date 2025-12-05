@@ -29,8 +29,10 @@ async function main() {
     });
 
     // Create Programs
-    await prisma.program.create({
-        data: {
+    await prisma.program.upsert({
+        where: { id: 'p1' },
+        update: {},
+        create: {
             id: 'p1',
             title: 'Forest Adventure: Bug Hunting',
             description: 'Join us for an exciting day in the forest looking for rare bugs!',
@@ -48,8 +50,10 @@ async function main() {
         }
     });
 
-    await prisma.program.create({
-        data: {
+    await prisma.program.upsert({
+        where: { id: 'p2' },
+        update: {},
+        create: {
             id: 'p2',
             title: 'Pottery Class: Make Your Own Bowl',
             description: 'Hands-on pottery class for kids.',
