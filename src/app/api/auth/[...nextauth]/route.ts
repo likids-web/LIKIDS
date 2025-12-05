@@ -6,7 +6,10 @@ import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
 
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+
 export const authOptions: AuthOptions = {
+    adapter: PrismaAdapter(prisma),
     providers: [
         // For "Real" Login
         GoogleProvider({
@@ -54,10 +57,9 @@ export const authOptions: AuthOptions = {
     ],
     callbacks: {
         async session({ session, token }: { session: any, token: any }) {
-            // Pass role to session
-            if (session.user && token.role) {
-                session.user.role = token.role;
+            if (session.user) {
                 session.user.id = token.sub; // Pass ID to session
+                session.user.role = token.role; // Pass role if available
             }
             return session;
         },
