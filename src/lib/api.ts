@@ -114,11 +114,18 @@ export const api = {
 
     getApplicationsByUserId: async (userId: string): Promise<any[]> => {
         const apps = await prisma.application.findMany({
-            where: { userId }
+            where: { userId },
+            include: { program: true },
+            orderBy: { appliedAt: 'desc' }
         });
         return apps.map(a => ({
             ...a,
-            appliedAt: a.appliedAt.toISOString()
+            appliedAt: a.appliedAt.toISOString(),
+            program: {
+                ...a.program,
+                date: a.program.date.toISOString(),
+                images: a.program.images ? JSON.parse(a.program.images) : [],
+            }
         }));
     },
 
@@ -130,6 +137,22 @@ export const api = {
     },
 
     applyForProgram: async (programId: string, userId: string, userName: string): Promise<Application> => {
+        // Check if already applied
+        const existing = await prisma.application.findFirst({
+            where: { programId, userId }
+        });
+        if (existing) {
+            throw new Error("You have already applied to this program.");
+        }
+
+        // Check capacity
+        const program = await prisma.program.findUnique({ where: { id: programId } });
+        if (!program) throw new Error("Program not found");
+
+        if (program.currentParticipants >= program.maxParticipants) {
+            throw new Error("This program is full.");
+        }
+
         const app = await prisma.application.create({
             data: {
                 programId,

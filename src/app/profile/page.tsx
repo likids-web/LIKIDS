@@ -53,14 +53,20 @@ export default function ProfilePage() {
                 <h2>My Applications</h2>
                 {loading ? <p>Loading...</p> : (
                     <div className={styles.list}>
-                        {applications.length === 0 && <p>No applications yet.</p>}
+                        {applications.length === 0 && <p className={styles.empty}>No applications yet.</p>}
                         {applications.map((app: any) => (
                             <div key={app.id} className={styles.item}>
-                                <div className={styles.itemHeader}>
-                                    <span className={styles.programId}>Program: {app.programId}</span>
-                                    <span className={`${styles.badge} ${styles[app.status]}`}>{app.status}</span>
+                                <div className={styles.thumbnail}>
+                                    <img src={app.program.thumbnail} alt={app.program.title} />
                                 </div>
-                                <p className={styles.date}>Applied: {new Date(app.appliedAt).toLocaleDateString()}</p>
+                                <div className={styles.content}>
+                                    <div className={styles.itemHeader}>
+                                        <h3 className={styles.programTitle}>{app.program.title}</h3>
+                                        <span className={`${styles.badge} ${styles[app.status]}`}>{app.status}</span>
+                                    </div>
+                                    <p className={styles.date}>Event Date: {new Date(app.program.date).toLocaleDateString()}</p>
+                                    <p className={styles.appliedDate}>Applied on: {new Date(app.appliedAt).toLocaleDateString()}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
