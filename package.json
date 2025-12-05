@@ -10,15 +10,19 @@
   },
   "dependencies": {
     "next": "16.0.7",
+    "next-auth": "^4.24.13",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "@prisma/client": "^5.14.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.0.7",
+    "prisma": "^5.14.0",
     "typescript": "^5"
   }
 }

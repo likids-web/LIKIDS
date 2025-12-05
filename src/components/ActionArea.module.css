@@ -1,0 +1,20 @@
+.actionArea {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-md);
+    background: white;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: center;
+    z-index: 50;
+    /* Ensure it doesn't overflow mobile container width visually if on desktop */
+    max-width: var(--mobile-max-width);
+    margin: 0 auto;
+}
+
+/* Add a spacer to prevent content being hidden behind fixed bar */
+.spacer {
+    height: 80px;
+}

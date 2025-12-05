@@ -1,0 +1,47 @@
+.container {
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.roleSelector {
+    display: flex;
+    background: var(--color-border);
+    padding: 4px;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.roleBtn {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+.active {
+    background: white;
+    color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerText {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.link {
+    color: var(--color-primary);
+    font-weight: 600;
+}

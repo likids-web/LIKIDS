@@ -1,0 +1,148 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.backLink {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #636e72;
+    font-size: 0.9rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.75rem;
+}
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.recruiting {
+    background: #0984e3;
+    color: white;
+}
+
+.active {
+    background: #00b894;
+    color: white;
+}
+
+.completed {
+    background: #636e72;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: #636e72;
+    margin-bottom: 1.5rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contentForm {
+    padding-top: 1.5rem;
+    border-top: 1px solid #dfe6e9;
+}
+
+.contentForm h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Applicant List */
+.applicantList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.applicantItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.applicantInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.date {
+    font-size: 0.75rem;
+    color: #b2bec3;
+}
+
+.applicantActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.approveBtn {
+    background: #00b894;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.rejectBtn {
+    background: #ff7675;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.statusLabel {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #00b894;
+}

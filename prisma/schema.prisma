@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String        @id @default(uuid())
+  name        String
+  email       String        @unique
+  role        String        @default("parent") // 'admin' | 'parent'
+  phoneNumber String?
+  createdAt   DateTime      @default(now())
+  applications Application[]
+  reviews     Review[]
+}
+
+model Program {
+  id              String        @id @default(uuid())
+  title           String
+  description     String
+  thumbnail       String
+  date            DateTime
+  location        String
+  status          String        @default("recruiting") // 'recruiting' | 'active' | 'completed'
+  maxParticipants Int
+  currentParticipants Int       @default(0)
+  price           Int
+  videoUrl        String?
+  images          String?       // JSON string or comma separated for SQLite simplicity
+  createdAt       DateTime      @default(now())
+  applications    Application[]
+  reviews         Review[]
+}
+
+model Application {
+  id        String   @id @default(uuid())
+  status    String   @default("pending") // 'pending' | 'approved' | 'rejected'
+  appliedAt DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  programId String
+  program   Program  @relation(fields: [programId], references: [id])
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  programId String
+  program   Program  @relation(fields: [programId], references: [id])
+}

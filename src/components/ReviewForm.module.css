@@ -1,0 +1,42 @@
+.container {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    border: 1px solid #dfe6e9;
+}
+
+.container h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.stars {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #dfe6e9;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.star.active {
+    color: #ffb400;
+}
+
+.textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    resize: none;
+    height: 100px;
+    margin-bottom: 1rem;
+    font-family: inherit;
+}

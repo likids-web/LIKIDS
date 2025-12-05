@@ -1,0 +1,16 @@
+.footer {
+    padding: var(--spacing-lg);
+    background: var(--color-surface);
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
