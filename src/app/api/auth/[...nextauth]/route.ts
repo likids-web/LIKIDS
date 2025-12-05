@@ -1,6 +1,7 @@
 import NextAuth, { AuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google"
+import KakaoProvider from "next-auth/providers/kakao"
 import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
@@ -9,8 +10,12 @@ export const authOptions: AuthOptions = {
     providers: [
         // For "Real" Login
         GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID || "mock-client-id",
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET || "mock-client-secret",
+            clientId: process.env.GOOGLE_CLIENT_ID || "",
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+        }),
+        KakaoProvider({
+            clientId: process.env.KAKAO_CLIENT_ID || "",
+            clientSecret: process.env.KAKAO_CLIENT_SECRET || "",
         }),
         // For "Dev/Test" Login (replacing our button hacks)
         CredentialsProvider({

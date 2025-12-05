@@ -22,11 +22,11 @@ export default function LoginPage() {
             <div className={styles.divider}>Or continue with</div>
 
             <div className={styles.socialButtons}>
-                <button className={styles.kakaoBtn} onClick={() => signIn('credentials', { email: 'admin@likids.com', role: 'admin', callbackUrl: '/admin/programs' })}>
-                    Test: Login as Admin
+                <button className={styles.kakaoBtn} onClick={() => signIn('kakao', { callbackUrl: '/' })}>
+                    Sign in with Kakao
                 </button>
-                <button className={styles.googleBtn} onClick={() => signIn('credentials', { email: 'parent@likids.com', role: 'parent', callbackUrl: '/' })}>
-                    Test: Login as Parent
+                <button className={styles.googleBtn} onClick={() => signIn('google', { callbackUrl: '/' })}>
+                    Sign in with Google
                 </button>
             </div>
 
